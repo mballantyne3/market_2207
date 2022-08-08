@@ -30,4 +30,13 @@ RSpec.describe Vendor do
 
     expect(vendor.inventory).to eq({item1 => 55, item2 => 12})
   end
+
+  #sum of items price * quantity
+  it 'can determine potential revenue' do
+
+    vendor.stock(item1, 35)
+    vendor.stock(item2, 7)
+
+    expect(vendor.potential_revenue).to eq(29.75)
+  end
 end
