@@ -38,4 +38,7 @@ class Market
     total_inventory.select {|_, value| value[:quantity] > 50 && value[:vendors].count > 1 }.keys
   end
 
+  def sorted_item_list
+    total_inventory.keys.map(&:name).sort
+  end
 end
